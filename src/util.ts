@@ -269,8 +269,8 @@ export async function executeAsTask(name: string, command: string, args?: string
 export async function executeAsTask(name: string, cmdOrProcess: string, args?: string[], asProcess: boolean = false): Promise<void> {
     let taskDefinition: vscode.TaskDefinition;
     let taskExecution: vscode.ShellExecution | vscode.ProcessExecution;
-    if (asProcess) {
-        taskDefinition = { type: 'process' };
+    if(asProcess){
+        taskDefinition = { type: 'process'};
         taskExecution = args ? new vscode.ProcessExecution(
             cmdOrProcess,
             args
@@ -648,7 +648,7 @@ export function readFileSyncSafe(
     encoding: BufferEncoding = 'utf-8'
 ): string | undefined {
     try {
-        return fs.readFileSync(path, { encoding: encoding });
+        return fs.readFileSync(path, {encoding:encoding});
     } catch (e) {
         return undefined;
     }
@@ -658,9 +658,9 @@ export function readFileSyncSafe(
 export function readdirSyncSafe(
     path: fs.PathLike,
     encoding: BufferEncoding = 'utf-8'
-) {
+){
     try {
-        return fs.readdirSync(path, { encoding: encoding });
+        return fs.readdirSync(path, {encoding: encoding});
     } catch (e) {
         return undefined;
     }
@@ -683,7 +683,7 @@ export function isFileSafe(path: fs.PathLike): boolean {
 }
 
 // Keeps only the unique entries in an array, optionally with a custom comparison function
-export function uniqueEntries<T>(array: T[], isIdentical: (x: T, y: T) => boolean = (x, y) => (x === y)) {
+export function uniqueEntries<T>(array: T[], isIdentical: (x: T, y: T) => boolean = (x, y) => (x === y)){
     function uniqueFunction(v: T, index: number, array: T[]): boolean {
         return array.findIndex(v2 => isIdentical(v2, v)) === index;
     }

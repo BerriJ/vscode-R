@@ -1639,8 +1639,8 @@
                 },
                 "r.session.levelOfObjectDetail": {
                     "type": "string",
-                    "default": "Minimal",
                     "markdownDescription": "How much of the object to show on hover, autocompletion, and in the workspace viewer? Changes the option `vsc.str.max.level` in R. Requires `#r.sessionWatcher#` to be set to `true`.",
+                    "default": "Minimal",
                     "enum": [
                         "Minimal",
                         "Normal",
